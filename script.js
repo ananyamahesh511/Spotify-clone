@@ -20,7 +20,7 @@ function formatTime(seconds) {
     // }
     // fetchData();
  async function getSongs(){
-    let a = await fetch("http://127.0.0.1:5500/songs/");
+    let a = await fetch("songs/");
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;//storing the html response in the new created div
@@ -49,10 +49,10 @@ function formatTime(seconds) {
         currentSong.play()
         play.src = "images/pause.svg"
     }
-    let audio = new Audio(` http://127.0.0.1:5500/songs/${encodedTrack}.mp3`);
+    let audio = new Audio(`songs/${encodedTrack}.mp3`);
 
     console.log("Playing:", audio.src); // Debugging
-    currentSong.src = `http://127.0.0.1:5500/songs/${encodedTrack}.mp3`
+    currentSong.src = `songs/${encodedTrack}.mp3`
     currentSong.play()
     document.querySelector(".songinfo").innerHTML = track
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
