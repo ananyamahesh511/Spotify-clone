@@ -19,30 +19,39 @@ function formatTime(seconds) {
     // console.log(data);
     // }
     // fetchData();
- async function getSongs(){
+async function getSongs(){
+    let response = await fetch("songs.json");
+    let data = await response.json();
+
+    return data.map(song => {
+        let songName = song.replace(".mp3", "");
+        songName = songName.replace(/.*?[：｜-]\s*/, '');
+        songName = songName.replace(/\(.*?\)/g, '').trim();
+        return songName;
+    });
+
+    /*
+    // Alternative way of fetching songs (HTML parsing from directory listing):
     let a = await fetch("songs/");
     let response = await a.text();
     let div = document.createElement("div");
-    div.innerHTML = response;//storing the html response in the new created div
-    let as = div.getElementsByTagName("a");// getting elements with the tag 'a' in div
-    console.log(as);//printing the html collection of all 'a' tags
-    let songs = []//creating an empty songs array
-    for (let index = 0; index < as.length; index++) {//traversing through html collection of as
-        const element = as[index];//each as[index] is assigned to variable 'element'
-        if(element.href.endsWith(".mp3")){//if the element's href ends with .mp3
-            let songName = decodeURIComponent(element.href.split("/").pop().replace(".mp3", ""));//splitting the url into an array using | as the  separator
-                       //.pop() gets the last part of the URL (the actual file name, like songname.mp3).
-                       //.replace(".mp3", "") removes the .mp3 file extension
+    div.innerHTML = response;
+    let as = div.getElementsByTagName("a");
+    console.log(as);
+    let songs = [];
+    for (let index = 0; index < as.length; index++) {
+        const element = as[index];
+        if (element.href.endsWith(".mp3")) {
+            let songName = decodeURIComponent(element.href.split("/").pop().replace(".mp3", ""));
             songName = songName.replace(/.*?[：｜-]\s*/, '');
-            //The above line uses a regular expression (replace) to remove everything before the first occurrence of either a colon (：), vertical bar (｜), or hyphen (-) followed by a space
             songName = songName.replace(/\(.*?\)/g, '').trim();
-            // The above line Removes anything inside parentheses (extra metadata)
             songs.push(songName);
-        } 
-        
+        }
     }
-    return songs//return all the songs
- }
+    return songs;
+    */
+}
+
  const playMusic = (track, pause=false)=>{
     let encodedTrack = encodeURIComponent(track.trim()); // Encode song name properly
     if(!pause){
