@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"> 
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>'Spotify - Web Player: Music foe everyone</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="utility.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="container flex bg-black">
+    <div class="left ">
+      <div class="close">
+        <img src="images/cross.svg" alt="">
+      </div>
+      <div class="home bg-grey rounded m-1 p-1">
+        <div class="app-logo"><img src="images/app-logo.svg" alt="Spotify" class="invert" style="width: 26px">Spotify</div>
+        <ul>
+          <li><img src="images/home-logo.svg" alt="Home" class="invert">Home</li>
+          <li><img src="images/search-logo.svg" alt="Search" class="invert">Search</li>
+        </ul>
+      </div>
+      <div class="library bg-grey rounded m-1 p-1">
+        <div class="heading">
+          <img src="images/library-logo.svg" alt="Playlist" class="invert">
+          <h2>Your Library</h2>
+          <i class="fa-solid fa-plus" style="color: #ffffff;"></i>
+        </div>
+        <div class="song-list"> 
+          <ul>
+
+          </ul>
+        </div>
+        <div class="footer">
+          <div data-testid="left-sidebar-legal-links">
+
+            <a href="https://www.spotify.com/in-en/legal/">
+              <span>Legal</span>
+            </a>
+
+            <a href="https://www.spotify.com/in-en/safetyandprivacy/">
+              <span>Safety &amp; Privacy Center</span>
+            </a>
+
+            <a href="https://www.spotify.com/in-en/legal/privacy-policy/">
+              <span>Privacy Policy</span>
+            </a>
+
+            <a href="https://www.spotify.com/in-en/legal/cookies-policy/">
+              <span>Cookies</span>
+            </a>
+
+            <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3">
+              <span>About Ads</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right bg-grey m-1  rounded" style="margin-top: 15px">
+      <div class="header rounded">
+        <div class="nav">
+          <div class="hamburger-container">
+            <img width="35px" height="35px" class="invert hamburger" src="images/hamburger.svg" alt="">
+          <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+          <i class="fa-solid fa-chevron-right  chevron-right" style="color: #ffffff;"></i>
+        </div>  
+        </div>
+        <div class="buttons">
+          <button class="signup">Signup</button>
+          <button class="login">
+            <p>Log in</p>
+          </button>
+        </div>
+      </div>
+      <div class="spotify-playlists">
+        <heading>Spotify Playlists</heading>
+        <div class="card-container">
+          <div class="card">
+            <div class="play">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              </svg>
+            </div>
+            <img src="https://image-cdn-fa.spotifycdn.com/image/ab67706c0000da84f15b8339fecb65f9b050e3b3" alt="TS card">
+            <h1>Taylor Swift</h1>
+            <h2>Best of Midnights!!</h2>
+          </div>
+          <div class="card">
+            <img
+              src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/3/ab6761610000e5ebfc043bea91ac91c222d235c9/en-GB"
+              alt="TS card">
+            <h1>Diljith Dosanj</h1>
+            <h2>Best of G.O.A.T</h2>
+          </div>
+          <!-- <div class="card">
+            <img
+              src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/daily/5/ab67616d0000b2733f3d35703bdcd917dad51c4f/en-GB"
+              alt="TS card">
+            <h1>Pasoori</h1>
+            <h2>Best of Coke Studio</h2>
+          </div>
+          <div class="card">
+            <img src="https://i.scdn.co/image/ab67706f00000002929f5d0ecafc3cdc5f953695" alt="TS card">
+            <h1>Bollywood</h1>
+            <h2>Top Hits</h2>
+          </div> -->
+          <div class="card">
+            <img src="https://i.scdn.co/image/ab67616d00001e02f524178cb6dde89fb4b1585c">
+            <h1>Crew</h1>
+            <h2>Original Motion Picture</h2>
+          </div>
+        </div>
+        <div class="playbar">
+          <div class="seekbar">
+            <div class="circle">
+              
+            </div>
+          </div>
+          <div class="songinfo">
+            
+          </div>
+          <div class="songbuttons">
+            <img src="images/previous.svg" alt="prev" id="previous">
+            <img id="play" src="images/play.svg" alt="play">
+            <img src="images/forward.svg" alt="next" id="next">
+          </div>
+            <div class="timevol">
+            <div class="songtime">
+            </div>
+            <div class="volume">
+            <img width="20" src="images/volume.svg" alt="">
+            <div class="range">
+              <input type="range" name="volume" id="">
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>   
